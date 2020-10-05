@@ -128,6 +128,7 @@ public class Lambdas {
 	}
 	
 	public static int min(List<Integer> l) {
+		return l.stream().min((a,b) -> Integer.compare(a, b)).get();
 		//return (int) l.stream().count();
 		//return l.stream().max((a,b) -> Integer.compare(a, b)).get(); ODER .min()
 		//return l.stream().findFirst().get();
