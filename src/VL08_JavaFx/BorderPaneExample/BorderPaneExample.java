@@ -33,6 +33,8 @@ public class BorderPaneExample extends Application{
         BorderPane.setAlignment(blist[3],Pos.BOTTOM_CENTER);
         // Set the alignment of the Center Text to Center
         BorderPane.setAlignment(blist[4], Pos.CENTER);
+
+        
         
         // wenn man die Werte nicht im Konstruktor vom Scene setzen will
 		// bp.setPrefSize(300, 300);

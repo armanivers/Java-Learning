@@ -1,6 +1,9 @@
 package VL11_Lambdas_Streams;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -72,6 +75,19 @@ public class Lambdas {
         stream.forEach(System.out::println);
         
         System.out.println("Test: " +sum(numbers));
+        
+        int[] ints = new int[5];
+        Auto[] cars = new Auto[10];
+        
+//        Arrays.sort(cars,new Comparator<Auto>() {
+//			@Override
+//			public int compare(Auto o1, Auto o2) {
+//				return Integer.compare(o1.getGeschwindigkeit(), o2.getGeschwindigkeit());
+//			}
+//        });
+        
+        System.out.println("Summe = " +intSum(numbers));
+        System.out.println("Summe = " +doubleAvg(numbers));
 		
 	}
 	
@@ -138,5 +154,13 @@ public class Lambdas {
 		//return l.stream().filter(a -> a == 3).findFirst().get(); //erstes element
 		//return l.stream().mapToInt(Integer::intValue).sum(); oder .average();
 		//return (int) l.stream().mapToDouble(a -> Double::parseDouble).sum();
+	}
+	
+	public static int intSum(Collection<Integer> l) {
+		return l.stream().collect(Collectors.summingInt(a ->a ));
+	}
+	
+	public static double doubleAvg(Collection<Integer> l) {
+		return l.stream().collect(Collectors.averagingDouble(a -> a ));
 	}
 }
