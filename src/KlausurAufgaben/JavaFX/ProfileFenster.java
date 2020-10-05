@@ -1,6 +1,7 @@
 package KlausurAufgaben.JavaFX;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,6 +16,7 @@ public class ProfileFenster extends Application{
 		
 		Button b1 = new Button("Password Fenster");
 		Button b2 = new Button("Threads Fenster");
+		Button b3 = new Button("Menu");
 		
 		b1.setOnAction(e -> {
 			new PasswortFenster(stage,"Change Password").showView();
@@ -24,8 +26,14 @@ public class ProfileFenster extends Application{
 			new ThreadFenster(stage,"Thread Fenster").showView();
 		});
 		
-		hb.getChildren().addAll(b1,b2);
+		b3.setOnAction( e-> {
+			new MenuFenster(stage,"Menu").showView();
+		});
+		
+		hb.getChildren().addAll(b1,b2,b3);
 		hb.setAlignment(Pos.CENTER);
+		hb.setPadding(new Insets(10));
+		hb.setSpacing(10);
 		Scene scene = new Scene(hb, 300, 150);
 		stage.setScene(scene);
 		stage.setTitle("Profile");
