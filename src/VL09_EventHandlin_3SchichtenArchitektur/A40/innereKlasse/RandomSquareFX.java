@@ -54,6 +54,8 @@ public class RandomSquareFX extends Application{
 			int g = (int)(Math.random()*(255-0)+0);
 			int b = (int)(Math.random()*(255-0)+0);
 			
+			//Formel = (int) (Math.random() * (max-min) + min)
+			
 			text.setText("RGB = "+r+"|"+g+"|"+b);
 			
 			target.setFill(Color.rgb(r,g,b));
